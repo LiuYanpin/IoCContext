@@ -69,7 +69,7 @@ class IoCContextImplTest {
         try {
             context.getBean(String.class);
         }catch (Exception e) {
-            assertEquals(IllegalArgumentException.class, e.getClass());
+            assertEquals(IllegalStateException.class, e.getClass());
         }
     }
 
@@ -129,6 +129,15 @@ class IoCContextImplTest {
     @Test
     void should_register_bean_by_superclass_and_subclass() throws Exception {
         IoCContext context = new IoCContextImpl();
+        context.registerBean(MyBeanBase.class, MyBeanBaseCooler.class);
+        MyBeanBase myBeanBaseInstance = context.getBean(MyBeanBase.class);
+        assertTrue(MyBeanBaseCooler.class.isInstance(myBeanBaseInstance));
+    }
+
+    @Test
+    void should_register_bean_by_super_and_sub_class_and_get_later_subclass() throws Exception {
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(MyBeanBase.class, MyBeanBaseFancy.class);
         context.registerBean(MyBeanBase.class, MyBeanBaseCooler.class);
         MyBeanBase myBeanBaseInstance = context.getBean(MyBeanBase.class);
         assertTrue(MyBeanBaseCooler.class.isInstance(myBeanBaseInstance));
