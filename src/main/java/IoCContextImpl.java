@@ -44,4 +44,9 @@ public class IoCContextImpl implements IoCContext {
         }
         return instance;
     }
+
+    @Override
+    public <T> void registerBean(Class<? super T> resolveClazz, Class<T> beanClazz) {
+
+    }
 }

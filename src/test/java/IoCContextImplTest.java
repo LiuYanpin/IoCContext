@@ -115,4 +115,14 @@ class IoCContextImplTest {
         assertNotSame(myBean1, myBean2);
     }
 
+    @Test
+    void should_get_different_class_if_register_two_class() throws Exception {
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(String.class);
+        context.registerBean(ArrayList.class);
+        String instanceString = context.getBean(String.class);
+        ArrayList instanceArrayList = context.getBean(ArrayList.class);
+        assertTrue(String.class.isInstance(instanceString));
+        assertTrue(ArrayList.class.isInstance(instanceArrayList));
+    }
 }
