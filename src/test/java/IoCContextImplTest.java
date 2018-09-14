@@ -108,8 +108,11 @@ class IoCContextImplTest {
     @Test
     void should_get_instance_if_get_mybean() throws Exception {
         IoCContext context = new IoCContextImpl();
-        context.registerBean(MyBean.class);
-        MyBean myBean = context.getBean(MyBean.class);
-        assertTrue(MyBean.class.isInstance(myBean));
+        context.registerBean(MyBeanWithDefaultConstructor.class);
+        MyBeanWithDefaultConstructor myBean1 = context.getBean(MyBeanWithDefaultConstructor.class);
+        assertTrue(MyBeanWithDefaultConstructor.class.isInstance(myBean1));
+        MyBeanWithDefaultConstructor myBean2 = context.getBean(MyBeanWithDefaultConstructor.class);
+        assertNotSame(myBean1, myBean2);
     }
+
 }
