@@ -53,7 +53,7 @@ class IoCContextImplTest {
     }
 
     @Test
-    void should_get_void_if_dulplicate_bean() throws InstantiationException, IllegalAccessException {
+    void should_get_void_if_duplicate_bean() throws InstantiationException, IllegalAccessException {
         IoCContext context = new IoCContextImpl();
         try {
             context.registerBean(String.class);
@@ -74,7 +74,7 @@ class IoCContextImplTest {
     }
 
     @Test
-    void should_get_exception_if_construtor_throw_exception() throws InstantiationException, IllegalAccessException {
+    void should_get_exception_if_constructor_throw_exception() throws InstantiationException, IllegalAccessException {
         IoCContext context = new IoCContextImpl();
         context.registerBean(ConstructorWithExceptionClass.class);
         try {
@@ -141,6 +141,34 @@ class IoCContextImplTest {
         context.registerBean(MyBeanBase.class, MyBeanBaseCooler.class);
         MyBeanBase myBeanBaseInstance = context.getBean(MyBeanBase.class);
         assertTrue(MyBeanBaseCooler.class.isInstance(myBeanBaseInstance));
+    }
+
+    @Test
+    void should_register_bean_by_interface_and_subclass() throws Exception{
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(MyBeanInterface.class, MyBeanInterfaceFancy.class);
+        MyBeanInterface myBeanInterfaceInstance = context.getBean(MyBeanInterface.class);
+        assertEquals(myBeanInterfaceInstance.getClass(), MyBeanInterfaceFancy.class);
+    }
+
+    @Test
+    void should_register_bean_by_interface_and_subclass_and_cover_previoius() throws Exception {
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(MyBeanInterface.class, MyBeanInterfaceFancy.class);
+        context.registerBean(MyBeanInterface.class, MyBeanInterfaceCooler.class);
+        MyBeanInterface myBeanInterfaceInstance = context.getBean(MyBeanInterface.class);
+        assertEquals(myBeanInterfaceInstance.getClass(), MyBeanInterfaceCooler.class);
+    }
+
+    @Test
+    void should_get_register_bean_both_by_interface_or_superclass() throws Exception{
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(MyBeanBase.class, MyBeanExtendsBaseImplementsInterface.class);
+        context.registerBean(MyBeanInterface.class, MyBeanExtendsBaseImplementsInterface.class);
+        MyBeanBase myBeanBaseInstance = context.getBean(MyBeanBase.class);
+        MyBeanInterface myBeanInterfaceInstance = context.getBean(MyBeanInterface.class);
+        assertEquals(myBeanBaseInstance.getClass(), MyBeanExtendsBaseImplementsInterface.class);
+        assertEquals(myBeanInterfaceInstance.getClass(), MyBeanExtendsBaseImplementsInterface.class);
 
     }
 }

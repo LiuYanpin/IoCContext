@@ -37,11 +37,12 @@ public class IoCContextImpl implements IoCContext {
         if (resolveClazz == null) {
             throw new IllegalArgumentException();
         }
-        if (!currentBeanSet.contains(resolveClazz)) {
+        if (!currentBeanMap.containsKey(resolveClazz.getName())) {
             throw new IllegalStateException();
         }
         try {
-            instance = (T) currentBeanMap.get(resolveClazz.getName()).newInstance();
+            Class<T> theClass = currentBeanMap.get(resolveClazz.getName());
+            instance = theClass.newInstance();
         }catch (Exception e) {
             throw e;
         }
@@ -50,7 +51,6 @@ public class IoCContextImpl implements IoCContext {
 
     @Override
     public <T> void registerBean(Class<? super T> resolveClazz, Class<T> beanClazz) {
-        this.registerBean(resolveClazz);
         this.registerBean(beanClazz);
         currentBeanMap.put(resolveClazz.getName(), beanClazz);
     }
