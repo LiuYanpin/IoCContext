@@ -169,6 +169,5 @@ class IoCContextImplTest {
         MyBeanInterface myBeanInterfaceInstance = context.getBean(MyBeanInterface.class);
         assertEquals(myBeanBaseInstance.getClass(), MyBeanExtendsBaseImplementsInterface.class);
         assertEquals(myBeanInterfaceInstance.getClass(), MyBeanExtendsBaseImplementsInterface.class);
-
     }
 }
