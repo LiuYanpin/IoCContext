@@ -30,6 +30,18 @@ class IoCContextImplTest {
     }
 
     @Test
+    void should_throw_abstract_message_when_register_class() {
+        IoCContext context = new IoCContextImpl();
+        try {
+            context.registerBean(MyAbstractClass.class);
+        }catch (Exception e) {
+            assertEquals(IllegalArgumentException.class, e.getClass());
+            assertEquals("MyAbstract is abstract.", e.getMessage());
+        }
+
+    }
+
+    @Test
     void should_throw_no_default_constructor() {
         IoCContext context = new IoCContextImpl();
         try {
@@ -83,5 +95,21 @@ class IoCContextImplTest {
         }catch (Exception e) {
             assertEquals(IllegalStateException.class, e.getClass());
         }
+    }
+
+    @Test
+    void should_get_instance_if_get_bean() throws Exception {
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(String.class);
+        String instance = context.getBean(String.class);
+        assertEquals("", instance);
+    }
+
+    @Test
+    void should_get_instance_if_get_mybean() throws Exception {
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(MyBean.class);
+        MyBean myBean = context.getBean(MyBean.class);
+        assertTrue(MyBean.class.isInstance(myBean));
     }
 }
