@@ -106,7 +106,7 @@ class IoCContextImplTest {
     }
 
     @Test
-    void should_get_instance_if_get_mybean() throws Exception {
+    void should_get_different_instance_if_get_twice() throws Exception {
         IoCContext context = new IoCContextImpl();
         context.registerBean(MyBeanWithDefaultConstructor.class);
         MyBeanWithDefaultConstructor myBean1 = context.getBean(MyBeanWithDefaultConstructor.class);
@@ -124,5 +124,14 @@ class IoCContextImplTest {
         ArrayList instanceArrayList = context.getBean(ArrayList.class);
         assertTrue(String.class.isInstance(instanceString));
         assertTrue(ArrayList.class.isInstance(instanceArrayList));
+    }
+
+    @Test
+    void should_register_bean_by_superclass_and_subclass() throws Exception {
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(MyBeanBase.class, MyBeanBaseCooler.class);
+        MyBeanBase myBeanBaseInstance = context.getBean(MyBeanBase.class);
+        assertTrue(MyBeanBaseCooler.class.isInstance(myBeanBaseInstance));
+
     }
 }

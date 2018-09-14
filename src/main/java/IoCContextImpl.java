@@ -1,12 +1,14 @@
 import com.sun.prism.es2.ES2Graphics;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class IoCContextImpl implements IoCContext {
     private HashSet<Class> currentBeanSet = new HashSet<>();
+    private HashMap<String, Class> currentBeanMap = new HashMap<>();
     private boolean ifStartGetBean = false;
     @Override
-    public void registerBean(Class<?> beanClazz) throws IllegalAccessException, InstantiationException {
+    public void registerBean(Class<?> beanClazz) {
         if (ifStartGetBean) {
             throw new IllegalStateException();
         }
@@ -24,6 +26,7 @@ public class IoCContextImpl implements IoCContext {
             return;
         }
         currentBeanSet.add(beanClazz);
+        currentBeanMap.putIfAbsent(beanClazz.getName(), beanClazz);
 
     }
 
@@ -38,7 +41,7 @@ public class IoCContextImpl implements IoCContext {
             throw new IllegalStateException();
         }
         try {
-            instance = resolveClazz.newInstance();
+            instance = (T) currentBeanMap.get(resolveClazz.getName()).newInstance();
         }catch (Exception e) {
             throw e;
         }
@@ -47,6 +50,12 @@ public class IoCContextImpl implements IoCContext {
 
     @Override
     public <T> void registerBean(Class<? super T> resolveClazz, Class<T> beanClazz) {
+        this.registerBean(resolveClazz);
+        this.registerBean(beanClazz);
+        currentBeanMap.put(resolveClazz.getName(), beanClazz);
+    }
 
+    private <T> void removeBean(Class<T> toBeRemoveClass) {
+        currentBeanSet.remove(toBeRemoveClass);
     }
 }
