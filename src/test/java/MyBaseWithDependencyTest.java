@@ -74,9 +74,31 @@ class MyBaseWithDependencyTest {
         context.registerBean(MySuperClassWithDependency.class, MySubClassWithDependency.class);
         context.registerBean(MyDependency.class);
         MySubClassWithDependency instance = context.getBean(MySubClassWithDependency.class);
+        assertEquals(MySubClassWithDependency.class, instance.getClass());
         assertArrayEquals(
                 new String[]{"superClassDependency", "subClassDependency"},
                 ((IoCContextImpl) context).getAllDependencyByClass(MySubClassWithDependency.class)
         );
+    }
+
+    @Test
+    void should_throw_exception_if_not_register() throws InstantiationException, IllegalAccessException {
+        IoCContext context= new IoCContextImpl();
+        context.registerBean(MySubClassWithDependency.class);
+        try {
+            context.getBean(MyDependency.class);
+        }catch (Exception e) {
+            assertEquals(IllegalStateException.class, e.getClass());
+        }
+    }
+
+    @Test
+    void should_throw_exception_if_register_null_class() {
+        IoCContext context = new IoCContextImpl();
+        try {
+            context.registerBean(null);
+        }catch (Exception e) {
+            assertEquals(IllegalArgumentException.class, e.getClass());
+        }
     }
 }

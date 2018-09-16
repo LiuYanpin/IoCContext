@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e82bf73a-842b-4cd7-bacb-67a64ab21621" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/IoCContextImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/IoCContextImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/IoCContextImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/IoCContextImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/MyBaseWithDependencyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/MyBaseWithDependencyTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/IoCContextImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IoCContextImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/IoCContextImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IoCContextImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -54,13 +48,13 @@
         <counts>
           <entry key="dummy" value="26" />
           <entry key="gradle" value="3" />
-          <entry key="java" value="7140" />
+          <entry key="java" value="7252" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="7140" />
+          <entry key="JAVA" value="7252" />
           <entry key="PLAIN_TEXT" value="26" />
         </counts>
       </usages-collector>
@@ -74,8 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="78" column="64" selection-start-line="78" selection-start-column="64" selection-end-line="78" selection-end-column="64" />
+            <state relative-caret-position="392">
+              <caret line="86" column="24" lean-forward="true" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/IoCContextImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+            <state relative-caret-position="175">
+              <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -557,8 +551,8 @@
         <option value="$PROJECT_DIR$/src/main/java/MySuperClassWithDependency.java" />
         <option value="$PROJECT_DIR$/src/test/java/IoCContextImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/MySubClassWithDependency.java" />
-        <option value="$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/IoCContextImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java" />
       </list>
     </option>
   </component>
@@ -669,7 +663,7 @@
     <property name="SearchEverywhereHistoryKey" value="Executable&#9;PSI&#9;JAVA://java.lang.reflect.Executable" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537088806384" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537089067991" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -702,18 +696,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super">
+  <component name="RunManager" selected="JUnit.MyBaseWithDependencyTest.should_throw_exception_if_register_null_class">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyBaseWithDependencyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="project_test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyBaseWithDependencyTest" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -751,11 +736,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyBaseWithDependencyTest.should_get_two_dependency_if_have_two_dependency" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyBaseWithDependencyTest.should_throw_exception_if_not_register" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project_test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyBaseWithDependencyTest" />
-      <option name="METHOD_NAME" value="should_get_two_dependency_if_have_two_dependency" />
+      <option name="METHOD_NAME" value="should_throw_exception_if_not_register" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBaseWithDependencyTest.should_throw_exception_if_register_null_class" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project_test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyBaseWithDependencyTest" />
+      <option name="METHOD_NAME" value="should_throw_exception_if_register_null_class" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -778,18 +774,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.MyBaseWithDependencyTest.should_create_class_and_its_dependency" />
-      <item itemvalue="JUnit.MyBaseWithDependencyTest" />
-      <item itemvalue="JUnit.MyBaseWithDependencyTest.should_get_two_dependency_if_have_two_dependency" />
       <item itemvalue="JUnit.MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" />
       <item itemvalue="JUnit.MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" />
+      <item itemvalue="JUnit.MyBaseWithDependencyTest.should_throw_exception_if_not_register" />
+      <item itemvalue="JUnit.MyBaseWithDependencyTest.should_throw_exception_if_register_null_class" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MyBaseWithDependencyTest.should_throw_exception_if_register_null_class" />
+        <item itemvalue="JUnit.MyBaseWithDependencyTest.should_throw_exception_if_not_register" />
         <item itemvalue="JUnit.MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" />
         <item itemvalue="JUnit.MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" />
         <item itemvalue="JUnit.MyBaseWithDependencyTest.should_create_class_and_its_dependency" />
-        <item itemvalue="JUnit.MyBaseWithDependencyTest.should_get_two_dependency_if_have_two_dependency" />
-        <item itemvalue="JUnit.MyBaseWithDependencyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -804,29 +800,11 @@
       <option name="presentableId" value="Default" />
       <updated>1536905179782</updated>
       <workItem from="1536905181192" duration="32447000" />
-      <workItem from="1537088562844" duration="243000" />
+      <workItem from="1537088562844" duration="504000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyBaseWithDependencyTest_should_create_class_and_its_dependency - 2018.09.16 at 16h 29m 08s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_create_class_and_its_dependency" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_dependency_if_dependency_inherit_from_super - 2018.09.16 at 16h 34m 39s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_dependency_if_dependency_inherit_from_super - 2018.09.16 at 16h 36m 28s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_dependency_if_dependency_inherit_from_super - 2018.09.16 at 16h 39m 24s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_dependency_if_dependency_inherit_from_super - 2018.09.16 at 16h 39m 57s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_dependency_if_dependency_inherit_from_super - 2018.09.16 at 16h 40m 09s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 16h 53m 12s.xml">
       <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
     </history-entry>
@@ -839,9 +817,27 @@
     <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 17h 00m 50s.xml">
       <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MyBaseWithDependencyTest_should_get_dependency_if_dependency_inherit_from_super - 2018.09.16 at 17h 05m 14s.xml">
+      <configuration name="MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBaseWithDependencyTest_should_get_dependency_if_dependency_inherit_from_super - 2018.09.16 at 17h 05m 39s.xml">
+      <configuration name="MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 17h 05m 42s.xml">
+      <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 17h 06m 48s.xml">
+      <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 17h 07m 17s.xml">
+      <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 17h 09m 15s.xml">
+      <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32690000" />
+    <option name="totallyTimeSpent" value="32951000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -872,7 +868,7 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" weight="0.2960688" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.3299363" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49570817" weight="0.24216868" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49570817" weight="0.24201474" />
       <window_info anchor="bottom" id="Inspection Results" order="10" sideWeight="0.49928468" weight="0.118072286" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50429183" side_tool="true" weight="0.32923833" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.22409639" />
@@ -1160,8 +1156,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/IoCContextImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        <state relative-caret-position="175">
+          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1170,8 +1166,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="78" column="64" selection-start-line="78" selection-start-column="64" selection-end-line="78" selection-end-column="64" />
+        <state relative-caret-position="392">
+          <caret line="86" column="24" lean-forward="true" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
