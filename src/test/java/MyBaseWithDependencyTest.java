@@ -45,4 +45,38 @@ class MyBaseWithDependencyTest {
             assertEquals(IllegalStateException.class, e.getClass());
         }
     }
+
+    @Test
+    void should_get_two_dependency_if_have_two_dependency() throws Exception {
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(MyBaseWithTwoDependency.class);
+        context.registerBean(MyDependency.class);
+        MyBaseWithTwoDependency twoDependencyInstance = context.getBean(MyBaseWithTwoDependency.class);
+        MyDependency firstDependency = twoDependencyInstance.getFirstDependency();
+        MyDependency secondDependency = twoDependencyInstance.getSecondDependency();
+        assertEquals(MyDependency.class, firstDependency.getClass());
+        assertEquals(MyDependency.class, secondDependency.getClass());
+        assertNotSame(firstDependency, secondDependency);
+    }
+
+    @Test
+    void should_get_dependency_if_dependency_inherit_from_super() throws Exception {
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(MySuperClassWithDependency.class, MySubClassWithDependency.class);
+        context.registerBean(MyDependency.class);
+        MySubClassWithDependency instance = context.getBean(MySubClassWithDependency.class);
+        assertEquals(MySubClassWithDependency.class, instance.getClass());
+    }
+
+    @Test
+    void should_get_ordered_dependency_if_have_dependency_inherit_form_super() throws Exception {
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(MySuperClassWithDependency.class, MySubClassWithDependency.class);
+        context.registerBean(MyDependency.class);
+        MySubClassWithDependency instance = context.getBean(MySubClassWithDependency.class);
+        assertArrayEquals(
+                new String[]{"superClassDependency", "subClassDependency"},
+                ((IoCContextImpl) context).getAllDependencyByClass(MySubClassWithDependency.class)
+        );
+    }
 }
