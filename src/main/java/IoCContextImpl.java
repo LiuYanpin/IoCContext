@@ -1,13 +1,12 @@
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.lang.reflect.Modifier;
+import java.util.*;
 
 import static java.lang.Class.forName;
 
-public class IoCContextImpl implements IoCContext {
-    private HashMap<String, Class> currentBeanMap = new HashMap<>();
+public class IoCContextImpl implements IoCContext{
+    private Map<String, Class> currentBeanMap = new LinkedHashMap<>();
     private boolean ifStartGetBean = false;
 
     public <T> String[] getAllDependencyByClass(Class<T> currentClass) throws Exception {
@@ -21,29 +20,35 @@ public class IoCContextImpl implements IoCContext {
     }
 
     @Override
-    public void registerBean(Class<?> beanClazz) {
+    public void registerBean(Class<?> beanClazz) throws ConstructorException {
         if (ifStartGetBean) {
             throw new IllegalStateException();
         }
         if (beanClazz == null) {
             throw new IllegalArgumentException("beanClazz is mandatory");
         }
-        if (beanClazz.isInterface()) {
+        if (beanClazz.isInterface() || Modifier.isAbstract(beanClazz.getModifiers())) {
             throw new IllegalArgumentException(beanClazz.getName() + " is abstract.");
         }
         try {
             beanClazz.newInstance();
         }catch (Exception e) {
-            throw new IllegalArgumentException(beanClazz.getName() + "has no default constructor.");
+            throw new ConstructorException(e.getMessage(), e.getCause());
         }
         if (beanClazz.getDeclaredConstructors().length == 0) {
-            throw new IllegalArgumentException(beanClazz.getName() + "has no default constructor.");
+            throw new IllegalArgumentException(beanClazz.getName() + " has no default constructor.");
         }
         if (currentBeanMap.containsKey(beanClazz.getName())) {
             return;
         }
         currentBeanMap.put(beanClazz.getName(), beanClazz);
 
+    }
+
+    @Override
+    public <T> void registerBean(Class<? super T> resolveClazz, Class<T> beanClazz) throws ConstructorException {
+        this.registerBean(beanClazz);
+        currentBeanMap.put(resolveClazz.getName(), beanClazz);
     }
 
     @Override
@@ -64,6 +69,11 @@ public class IoCContextImpl implements IoCContext {
             throw e;
         }
         return instance;
+    }
+
+    @Override
+    public void close() throws Exception {
+        this.close();
     }
 
     private <T> T initialDependency(Class<T> currentClass, Field[] dependencyFields) throws Exception {
@@ -92,11 +102,4 @@ public class IoCContextImpl implements IoCContext {
         }
         return allDependency.toArray(new Field[0]);
     }
-
-    @Override
-    public <T> void registerBean(Class<? super T> resolveClazz, Class<T> beanClazz) {
-        this.registerBean(beanClazz);
-        currentBeanMap.put(resolveClazz.getName(), beanClazz);
-    }
-
 }

@@ -37,7 +37,7 @@ class IoCContextImplTest {
             context.registerBean(MyAbstractClass.class);
         }catch (Exception e) {
             assertEquals(IllegalArgumentException.class, e.getClass());
-            assertEquals("MyAbstract is abstract.", e.getMessage());
+            assertEquals("MyAbstractClass is abstract.", e.getMessage());
         }
 
     }
@@ -49,12 +49,12 @@ class IoCContextImplTest {
             context.registerBean(MyBean.class);
         }catch (Exception e) {
             assertEquals(IllegalArgumentException.class, e.getClass());
-            assertEquals("MyBean has no constructor.", e.getMessage());
+            assertEquals("MyBean has no default constructor.", e.getMessage());
         }
     }
 
     @Test
-    void should_get_void_if_duplicate_bean() throws InstantiationException, IllegalAccessException {
+    void should_get_void_if_duplicate_bean() throws InstantiationException, IllegalAccessException, ConstructorException {
         IoCContext context = new IoCContextImpl();
         IoCContext originContext = context;
         context.registerBean(String.class);
@@ -77,7 +77,7 @@ class IoCContextImplTest {
     }
 
     @Test
-    void should_get_exception_if_constructor_throw_exception() throws InstantiationException, IllegalAccessException {
+    void should_get_exception_if_constructor_throw_exception() throws ConstructorException {
         IoCContext context = new IoCContextImpl();
         context.registerBean(ConstructorWithExceptionClass.class);
         try {

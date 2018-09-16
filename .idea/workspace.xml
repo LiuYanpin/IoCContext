@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e82bf73a-842b-4cd7-bacb-67a64ab21621" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ConstructorException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/IoCContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IoCContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/IoCContextImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IoCContextImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/IoCContextImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IoCContextImplTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -33,7 +36,7 @@
           <entry key="class" value="3" />
           <entry key="gitignore" value="1" />
           <entry key="gradle" value="1" />
-          <entry key="java" value="44" />
+          <entry key="java" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -41,20 +44,20 @@
           <entry key="CLASS" value="3" />
           <entry key="Git file" value="1" />
           <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="44" />
+          <entry key="JAVA" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="26" />
           <entry key="gradle" value="3" />
-          <entry key="java" value="7252" />
+          <entry key="java" value="7442" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="7252" />
+          <entry key="JAVA" value="7442" />
           <entry key="PLAIN_TEXT" value="26" />
         </counts>
       </usages-collector>
@@ -65,11 +68,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="86" column="24" lean-forward="true" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
+            <state relative-caret-position="60">
+              <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,16 +99,16 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/IoCContext.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/IoCContextImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2700">
-              <caret line="186" column="33" selection-start-line="186" selection-start-column="33" selection-end-line="186" selection-end-column="33" />
+            <state relative-caret-position="120">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,12 +117,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MyBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/IoCContextImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+            <state relative-caret-position="330">
+              <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ConstructorException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="66" selection-start-line="1" selection-start-column="66" selection-end-line="1" selection-end-column="66" />
+              <folding>
+                <element signature="e#156#157#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -536,7 +560,6 @@
         <option value="$PROJECT_DIR$/src/main/java/MyAbstractClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyBeanWithDefaultConstructor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/IoCContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyBeanBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyBeanBaseFancy.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyBeanBaseCooler.java" />
@@ -549,10 +572,12 @@
         <option value="$PROJECT_DIR$/src/main/java/MyBaseWithTwoDependency.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyBaseWithDependency.java" />
         <option value="$PROJECT_DIR$/src/main/java/MySuperClassWithDependency.java" />
-        <option value="$PROJECT_DIR$/src/test/java/IoCContextImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/MySubClassWithDependency.java" />
-        <option value="$PROJECT_DIR$/src/main/java/IoCContextImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/IoCContextImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ConstructorException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/IoCContext.java" />
+        <option value="$PROJECT_DIR$/src/main/java/IoCContextImpl.java" />
       </list>
     </option>
   </component>
@@ -562,7 +587,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="x" value="124" />
     <option name="y" value="23" />
     <option name="width" value="1206" />
@@ -663,7 +688,7 @@
     <property name="SearchEverywhereHistoryKey" value="Executable&#9;PSI&#9;JAVA://java.lang.reflect.Executable" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537089067991" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537090826966" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -696,52 +721,48 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MyBaseWithDependencyTest.should_throw_exception_if_register_null_class">
+  <component name="RunManager" selected="JUnit.MyBaseWithDependencyTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyBaseWithDependencyTest.should_create_class_and_its_dependency" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IoCContextImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project_test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyBaseWithDependencyTest" />
-      <option name="METHOD_NAME" value="should_create_class_and_its_dependency" />
+      <option name="MAIN_CLASS_NAME" value="IoCContextImplTest" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IoCContextImplTest.should_throw_abstract_message_when_register_class" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project_test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="IoCContextImplTest" />
+      <option name="METHOD_NAME" value="should_throw_abstract_message_when_register_class" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IoCContextImplTest.should_throw_no_default_constructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project_test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyBaseWithDependencyTest" />
-      <option name="METHOD_NAME" value="should_get_dependency_if_dependency_inherit_from_super" />
+      <option name="MAIN_CLASS_NAME" value="IoCContextImplTest" />
+      <option name="METHOD_NAME" value="should_throw_no_default_constructor" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyBaseWithDependencyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project_test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyBaseWithDependencyTest" />
-      <option name="METHOD_NAME" value="should_get_ordered_dependency_if_have_dependency_inherit_form_super" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyBaseWithDependencyTest.should_throw_exception_if_not_register" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="project_test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyBaseWithDependencyTest" />
-      <option name="METHOD_NAME" value="should_throw_exception_if_not_register" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -773,19 +794,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MyBaseWithDependencyTest.should_create_class_and_its_dependency" />
-      <item itemvalue="JUnit.MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" />
-      <item itemvalue="JUnit.MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" />
-      <item itemvalue="JUnit.MyBaseWithDependencyTest.should_throw_exception_if_not_register" />
       <item itemvalue="JUnit.MyBaseWithDependencyTest.should_throw_exception_if_register_null_class" />
+      <item itemvalue="JUnit.IoCContextImplTest" />
+      <item itemvalue="JUnit.IoCContextImplTest.should_throw_abstract_message_when_register_class" />
+      <item itemvalue="JUnit.IoCContextImplTest.should_throw_no_default_constructor" />
+      <item itemvalue="JUnit.MyBaseWithDependencyTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MyBaseWithDependencyTest" />
+        <item itemvalue="JUnit.IoCContextImplTest" />
+        <item itemvalue="JUnit.IoCContextImplTest.should_throw_no_default_constructor" />
+        <item itemvalue="JUnit.IoCContextImplTest.should_throw_abstract_message_when_register_class" />
         <item itemvalue="JUnit.MyBaseWithDependencyTest.should_throw_exception_if_register_null_class" />
-        <item itemvalue="JUnit.MyBaseWithDependencyTest.should_throw_exception_if_not_register" />
-        <item itemvalue="JUnit.MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" />
-        <item itemvalue="JUnit.MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" />
-        <item itemvalue="JUnit.MyBaseWithDependencyTest.should_create_class_and_its_dependency" />
       </list>
     </recent_temporary>
   </component>
@@ -800,44 +821,44 @@
       <option name="presentableId" value="Default" />
       <updated>1536905179782</updated>
       <workItem from="1536905181192" duration="32447000" />
-      <workItem from="1537088562844" duration="504000" />
+      <workItem from="1537088562844" duration="2189000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 16h 53m 12s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest - 2018.09.16 at 17h 20m 55s.xml">
+      <configuration name="IoCContextImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 16h 53m 46s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest_should_throw_abstract_message_when_register_class - 2018.09.16 at 17h 21m 19s.xml">
+      <configuration name="IoCContextImplTest.should_throw_abstract_message_when_register_class" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_dependency_if_dependency_inherit_from_super - 2018.09.16 at 16h 54m 01s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest_should_throw_no_default_constructor - 2018.09.16 at 17h 21m 23s.xml">
+      <configuration name="IoCContextImplTest.should_throw_no_default_constructor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 17h 00m 50s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest - 2018.09.16 at 17h 22m 04s.xml">
+      <configuration name="IoCContextImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_dependency_if_dependency_inherit_from_super - 2018.09.16 at 17h 05m 14s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" configurationId="JUnit" />
+    <history-entry file="MyBaseWithDependencyTest - 2018.09.16 at 17h 23m 24s.xml">
+      <configuration name="MyBaseWithDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_dependency_if_dependency_inherit_from_super - 2018.09.16 at 17h 05m 39s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_dependency_if_dependency_inherit_from_super" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest - 2018.09.16 at 17h 26m 21s.xml">
+      <configuration name="IoCContextImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 17h 05m 42s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
+    <history-entry file="MyBaseWithDependencyTest - 2018.09.16 at 17h 28m 09s.xml">
+      <configuration name="MyBaseWithDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 17h 06m 48s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest - 2018.09.16 at 17h 28m 15s.xml">
+      <configuration name="IoCContextImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 17h 07m 17s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest - 2018.09.16 at 17h 29m 50s.xml">
+      <configuration name="IoCContextImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyBaseWithDependencyTest_should_get_ordered_dependency_if_have_dependency_inherit_form_super - 2018.09.16 at 17h 09m 15s.xml">
-      <configuration name="MyBaseWithDependencyTest.should_get_ordered_dependency_if_have_dependency_inherit_form_super" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest - 2018.09.16 at 17h 32m 12s.xml">
+      <configuration name="IoCContextImplTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32951000" />
+    <option name="totallyTimeSpent" value="34636000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -849,10 +870,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="124" y="23" width="1206" height="841" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4991274" visible="true" weight="0.14592275" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4991274" visible="true" weight="0.21391752" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -861,20 +882,20 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49828178" weight="0.0" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49570817" visible="true" weight="0.32923833" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49570817" visible="true" weight="0.087312415" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" weight="0.2960688" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.3299363" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49570817" weight="0.24201474" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49570817" weight="0.44840294" />
       <window_info anchor="bottom" id="Inspection Results" order="10" sideWeight="0.49928468" weight="0.118072286" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50429183" side_tool="true" weight="0.32923833" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.22409639" />
       <window_info anchor="bottom" id="Run with VisualVM" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.49928468" weight="0.090361446" />
+      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.49928468" weight="0.12414734" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1016,13 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MyBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MyBeanExtendsBaseImplementsInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1102,23 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IoCContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/IoCContextImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2700">
-          <caret line="186" column="33" selection-start-line="186" selection-start-column="33" selection-end-line="186" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MySuperClassWithDependency.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1154,20 +1151,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IoCContextImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/MyBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConstructorException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="86" column="24" lean-forward="true" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
+        <state relative-caret-position="15">
+          <caret line="1" column="66" selection-start-line="1" selection-start-column="66" selection-end-line="1" selection-end-column="66" />
+          <folding>
+            <element signature="e#156#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/IoCContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/IoCContextImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/IoCContextImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

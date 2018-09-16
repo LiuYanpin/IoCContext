@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MyBaseWithDependencyTest {
+class ClassWithDependencyTest {
     @Test
     void should_create_class_with_dependency() throws Exception {
         IoCContext context = new IoCContextImpl();
@@ -25,7 +25,7 @@ class MyBaseWithDependencyTest {
     }
 
     @Test
-    void should_throw_exception_if_not_register_dependency() throws InstantiationException, IllegalAccessException {
+    void should_throw_exception_if_not_register_dependency() throws ConstructorException {
         IoCContext context = new IoCContextImpl();
         context.registerBean(MyBaseWithDependency.class);
         try {
@@ -36,7 +36,7 @@ class MyBaseWithDependencyTest {
     }
 
     @Test
-    void should_throw_exception_if_not_register_class_with_dependency() throws InstantiationException, IllegalAccessException {
+    void should_throw_exception_if_not_register_class_with_dependency() throws ConstructorException {
         IoCContext context = new IoCContextImpl();
         context.registerBean(MyDependency.class);
         try {
@@ -82,7 +82,7 @@ class MyBaseWithDependencyTest {
     }
 
     @Test
-    void should_throw_exception_if_not_register() throws InstantiationException, IllegalAccessException {
+    void should_throw_exception_if_not_register() throws ConstructorException {
         IoCContext context= new IoCContextImpl();
         context.registerBean(MySubClassWithDependency.class);
         try {
