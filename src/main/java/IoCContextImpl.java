@@ -1,6 +1,7 @@
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import static java.lang.Class.forName;
@@ -47,40 +48,34 @@ public class IoCContextImpl implements IoCContext {
 
         try {
             Class<T> currentClass = currentBeanMap.get(resolveClazz.getName());
-            Constructor constructorWithParameter = getConstructorWithParameter(currentClass);
+            Object[] dependency = getDependencyInstance(currentClass);
+            Constructor constructorWithParameter = getConstructorWithParameter(currentClass, dependency.length);
             constructorWithParameter.setAccessible(true);
-            int parameterCount = constructorWithParameter.getParameterCount();
-            if (parameterCount == 0) {
-                instance = currentClass.newInstance();
-            }else {
-                Object dependency = getDependencyInstance(currentClass);
-                instance = (T) constructorWithParameter.newInstance(dependency);
-            }
+            instance = (T) constructorWithParameter.newInstance(dependency);
         }catch (Exception e) {
             throw e;
         }
         return instance;
     }
 
-    private <T> Object getDependencyInstance(Class<T> currentClass) throws Exception {
+    private <T> Object[] getDependencyInstance(Class<T> currentClass) throws Exception {
         Field[] fields = currentClass.getDeclaredFields();
-        Object dependency = null;
+        ArrayList<Object> dependency = new ArrayList<>();
         for (Field field: fields) {
             field.setAccessible(true);
             if (field.getAnnotation(CreateOnTheFly.class) != null) {
-                dependency = getBean(field.getType());
-                break;
+                dependency.add(getBean(field.getType()));
             }
         }
-        return dependency;
+        return dependency.toArray();
     }
 
-    private <T> Constructor getConstructorWithParameter(Class<T> currentClass) {
+    private <T> Constructor getConstructorWithParameter(Class<T> currentClass, int parameterLength) {
         Constructor<?>[] constructors= currentClass.getDeclaredConstructors();
         Constructor constructorWithParameter = null;
         for (int constructorIndex = 0; constructorIndex < constructors.length; constructorIndex++) {
             constructorWithParameter = constructors[constructorIndex];
-            if (constructorWithParameter.getParameterCount() != 0) {
+            if (constructorWithParameter.getParameterCount() == parameterLength) {
                 break;
             }
         }
