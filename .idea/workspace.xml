@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e82bf73a-842b-4cd7-bacb-67a64ab21621" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/MyCloseableClassWithAnotherException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MyBeanWithoutDefaultConstructor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/IoCContextImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/IoCContextImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/IoCContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IoCContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/IoCContextImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IoCContextImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ClassWithDependencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ClassWithDependencyTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CloseableClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CloseableClassTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/IoCContextImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IoCContextImplTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -35,7 +41,8 @@
           <entry key="class" value="3" />
           <entry key="gitignore" value="1" />
           <entry key="gradle" value="1" />
-          <entry key="java" value="54" />
+          <entry key="java" value="67" />
+          <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -43,20 +50,23 @@
           <entry key="CLASS" value="3" />
           <entry key="Git file" value="1" />
           <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="54" />
+          <entry key="JAVA" value="67" />
+          <entry key="Markdown" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="26" />
           <entry key="gradle" value="3" />
-          <entry key="java" value="8338" />
+          <entry key="java" value="8929" />
+          <entry key="md" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="8338" />
+          <entry key="JAVA" value="8929" />
+          <entry key="Markdown" value="44" />
           <entry key="PLAIN_TEXT" value="26" />
         </counts>
       </usages-collector>
@@ -67,54 +77,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ClassWithDependencyTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/CloseableClassTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MyCloseableClassWithAnotherException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MyCloseableClassWithException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MyCloseableClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="56" selection-start-column="56" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MyBaseWithTwoDependency.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -131,19 +93,53 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/IoCContext.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MyBean.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="36" selection-start-column="36" selection-end-column="36" />
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/AutoCloseable.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MyBeanBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-305">
-              <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MyBeanWithoutDefaultConstructor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
+              <folding>
+                <element signature="e#129#130#0" expanded="true" />
+                <element signature="e#161#162#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="15">
+                <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/IoCContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="84" selection-start-line="3" selection-start-column="84" selection-end-line="3" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -151,8 +147,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/IoCContextImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+            <state relative-caret-position="-814">
+              <caret line="75" column="21" lean-forward="true" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#370#371#0" expanded="true" />
@@ -163,14 +159,32 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/Class.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MyAbstractClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="1780" column="18" selection-start-line="1780" selection-start-column="18" selection-end-line="1780" selection-end-column="18" />
+            <state>
+              <caret column="22" selection-start-column="22" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ConstructorWithExceptionClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
               <folding>
-                <element signature="e#58496#58497#0" expanded="true" />
-                <element signature="e#58567#58568#0" expanded="true" />
+                <element signature="e#88#89#0" expanded="true" />
+                <element signature="e#171#172#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CreateOnTheFly.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -594,14 +608,17 @@
         <option value="$PROJECT_DIR$/src/main/java/MySuperClassWithDependency.java" />
         <option value="$PROJECT_DIR$/src/main/java/MySubClassWithDependency.java" />
         <option value="$PROJECT_DIR$/src/main/java/ConstructorException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/IoCContext.java" />
-        <option value="$PROJECT_DIR$/src/test/java/IoCContextImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyCloseableClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyCloseableClassWithException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/IoCContextImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyCloseableClassWithAnotherException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MyBeanWithoutDefaultConstructor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/IoCContextImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/IoCContextImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/CloseableClassTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ClassWithDependencyTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/IoCContext.java" />
+        <option value="$PROJECT_DIR$/src/README.md" />
       </list>
     </option>
   </component>
@@ -633,32 +650,6 @@
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
@@ -712,7 +703,7 @@
     <property name="SearchEverywhereHistoryKey" value="Executable&#9;PSI&#9;JAVA://java.lang.reflect.Executable" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537094908993" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537100384918" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -748,60 +739,60 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CloseableClassTest.should_throw_first_exception_when_have_ordinary_class_and_closeable_class">
+  <component name="RunManager" selected="JUnit.IoCContextImplTest.should_not_register_bean_if_start_get_bean">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassWithDependencyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IoCContextImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project_test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ClassWithDependencyTest" />
+      <option name="MAIN_CLASS_NAME" value="IoCContextImplTest" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CloseableClassTest.should_close_one_closeable_class" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IoCContextImplTest.should_get_exception_if_constructor_throw_exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project_test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CloseableClassTest" />
-      <option name="METHOD_NAME" value="should_close_one_closeable_class" />
+      <option name="MAIN_CLASS_NAME" value="IoCContextImplTest" />
+      <option name="METHOD_NAME" value="should_get_exception_if_constructor_throw_exception" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CloseableClassTest.should_throw_first_exception_if_have_two_exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IoCContextImplTest.should_not_register_bean_if_start_get_bean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project_test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CloseableClassTest" />
-      <option name="METHOD_NAME" value="should_throw_first_exception_if_have_two_exception" />
+      <option name="MAIN_CLASS_NAME" value="IoCContextImplTest" />
+      <option name="METHOD_NAME" value="should_not_register_bean_if_start_get_bean" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CloseableClassTest.should_throw_first_exception_when_close" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IoCContextImplTest.should_throw_exception_if_get_null_bean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project_test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CloseableClassTest" />
-      <option name="METHOD_NAME" value="should_throw_first_exception_when_close" />
+      <option name="MAIN_CLASS_NAME" value="IoCContextImplTest" />
+      <option name="METHOD_NAME" value="should_throw_exception_if_get_null_bean" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CloseableClassTest.should_throw_first_exception_when_have_ordinary_class_and_closeable_class" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IoCContextImplTest.should_throw_no_default_constructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project_test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CloseableClassTest" />
-      <option name="METHOD_NAME" value="should_throw_first_exception_when_have_ordinary_class_and_closeable_class" />
+      <option name="MAIN_CLASS_NAME" value="IoCContextImplTest" />
+      <option name="METHOD_NAME" value="should_throw_no_default_constructor" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -823,19 +814,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ClassWithDependencyTest" />
-      <item itemvalue="JUnit.CloseableClassTest.should_close_one_closeable_class" />
-      <item itemvalue="JUnit.CloseableClassTest.should_throw_first_exception_when_close" />
-      <item itemvalue="JUnit.CloseableClassTest.should_throw_first_exception_if_have_two_exception" />
-      <item itemvalue="JUnit.CloseableClassTest.should_throw_first_exception_when_have_ordinary_class_and_closeable_class" />
+      <item itemvalue="JUnit.IoCContextImplTest.should_throw_no_default_constructor" />
+      <item itemvalue="JUnit.IoCContextImplTest" />
+      <item itemvalue="JUnit.IoCContextImplTest.should_get_exception_if_constructor_throw_exception" />
+      <item itemvalue="JUnit.IoCContextImplTest.should_throw_exception_if_get_null_bean" />
+      <item itemvalue="JUnit.IoCContextImplTest.should_not_register_bean_if_start_get_bean" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CloseableClassTest.should_throw_first_exception_when_have_ordinary_class_and_closeable_class" />
-        <item itemvalue="JUnit.CloseableClassTest.should_throw_first_exception_if_have_two_exception" />
-        <item itemvalue="JUnit.CloseableClassTest.should_throw_first_exception_when_close" />
-        <item itemvalue="JUnit.CloseableClassTest.should_close_one_closeable_class" />
-        <item itemvalue="JUnit.ClassWithDependencyTest" />
+        <item itemvalue="JUnit.IoCContextImplTest.should_not_register_bean_if_start_get_bean" />
+        <item itemvalue="JUnit.IoCContextImplTest.should_throw_exception_if_get_null_bean" />
+        <item itemvalue="JUnit.IoCContextImplTest.should_get_exception_if_constructor_throw_exception" />
+        <item itemvalue="JUnit.IoCContextImplTest" />
+        <item itemvalue="JUnit.IoCContextImplTest.should_throw_no_default_constructor" />
       </list>
     </recent_temporary>
   </component>
@@ -850,44 +841,44 @@
       <option name="presentableId" value="Default" />
       <updated>1536905179782</updated>
       <workItem from="1536905181192" duration="32447000" />
-      <workItem from="1537088562844" duration="6138000" />
+      <workItem from="1537088562844" duration="10297000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CloseableClassTest_should_close_one_closeable_class - 2018.09.16 at 17h 51m 29s.xml">
-      <configuration name="CloseableClassTest.should_close_one_closeable_class" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest_should_throw_no_default_constructor - 2018.09.16 at 19h 49m 54s.xml">
+      <configuration name="IoCContextImplTest.should_throw_no_default_constructor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CloseableClassTest_should_close_one_closeable_class - 2018.09.16 at 17h 53m 04s.xml">
-      <configuration name="CloseableClassTest.should_close_one_closeable_class" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest_should_throw_no_default_constructor - 2018.09.16 at 19h 50m 32s.xml">
+      <configuration name="IoCContextImplTest.should_throw_no_default_constructor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CloseableClassTest_should_close_one_closeable_class - 2018.09.16 at 17h 57m 59s.xml">
-      <configuration name="CloseableClassTest.should_close_one_closeable_class" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest - 2018.09.16 at 19h 53m 52s.xml">
+      <configuration name="IoCContextImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClassWithDependencyTest - 2018.09.16 at 17h 58m 37s.xml">
-      <configuration name="ClassWithDependencyTest" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest_should_get_exception_if_constructor_throw_exception - 2018.09.16 at 20h 00m 58s.xml">
+      <configuration name="IoCContextImplTest.should_get_exception_if_constructor_throw_exception" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CloseableClassTest_should_close_one_closeable_class - 2018.09.16 at 17h 59m 26s.xml">
-      <configuration name="CloseableClassTest.should_close_one_closeable_class" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest_should_get_exception_if_constructor_throw_exception - 2018.09.16 at 20h 05m 29s.xml">
+      <configuration name="IoCContextImplTest.should_get_exception_if_constructor_throw_exception" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CloseableClassTest_should_close_one_closeable_class - 2018.09.16 at 18h 00m 20s.xml">
-      <configuration name="CloseableClassTest.should_close_one_closeable_class" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest_should_get_exception_if_constructor_throw_exception - 2018.09.16 at 20h 07m 45s.xml">
+      <configuration name="IoCContextImplTest.should_get_exception_if_constructor_throw_exception" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CloseableClassTest_should_close_one_closeable_class - 2018.09.16 at 18h 34m 57s.xml">
-      <configuration name="CloseableClassTest.should_close_one_closeable_class" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest_should_get_exception_if_constructor_throw_exception - 2018.09.16 at 20h 08m 51s.xml">
+      <configuration name="IoCContextImplTest.should_get_exception_if_constructor_throw_exception" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CloseableClassTest_should_close_one_closeable_class - 2018.09.16 at 18h 39m 12s.xml">
-      <configuration name="CloseableClassTest.should_close_one_closeable_class" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest_should_get_exception_if_constructor_throw_exception - 2018.09.16 at 20h 09m 19s.xml">
+      <configuration name="IoCContextImplTest.should_get_exception_if_constructor_throw_exception" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CloseableClassTest_should_close_one_closeable_class - 2018.09.16 at 18h 40m 18s.xml">
-      <configuration name="CloseableClassTest.should_close_one_closeable_class" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest_should_throw_exception_if_get_null_bean - 2018.09.16 at 20h 13m 41s.xml">
+      <configuration name="IoCContextImplTest.should_throw_exception_if_get_null_bean" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CloseableClassTest_should_throw_first_exception_when_close - 2018.09.16 at 18h 42m 34s.xml">
-      <configuration name="CloseableClassTest.should_throw_first_exception_when_close" configurationId="JUnit" />
+    <history-entry file="IoCContextImplTest_should_not_register_bean_if_start_get_bean - 2018.09.16 at 20h 14m 11s.xml">
+      <configuration name="IoCContextImplTest.should_not_register_bean_if_start_get_bean" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38585000" />
+    <option name="totallyTimeSpent" value="42744000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -902,7 +893,7 @@
     <frame x="235" y="27" width="1032" height="841" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4991274" visible="true" weight="0.25151515" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4991274" visible="true" weight="0.35454544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -911,17 +902,17 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49828178" weight="0.0" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49570817" weight="0.41336972" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49570817" visible="true" weight="0.2510232" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" weight="0.2960688" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.3299363" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49570817" visible="true" weight="0.3287858" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49570817" weight="0.049140047" />
       <window_info anchor="bottom" id="Inspection Results" order="10" sideWeight="0.49928468" weight="0.118072286" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50429183" side_tool="true" weight="0.32923833" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.22373806" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.22358723" />
       <window_info anchor="bottom" id="Run with VisualVM" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.49928468" weight="0.12414734" />
@@ -1028,24 +1019,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MyAbstractClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ConstructorWithExceptionClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-          <folding>
-            <element signature="e#88#89#0" expanded="true" />
-            <element signature="e#171#172#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MyBeanWithDefaultConstructor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1095,13 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MyBeanBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MyBeanExtendsBaseImplementsInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1117,13 +1083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
           <caret line="75" selection-start-line="75" selection-end-line="76" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CreateOnTheFly.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1192,37 +1151,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MyBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ConstructorException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="66" selection-start-line="1" selection-start-column="66" selection-end-line="1" selection-end-column="66" />
-          <folding>
-            <element signature="e#156#157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/MyBaseWithDependencyTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/IoCContextImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1236,37 +1168,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MyBaseWithTwoDependency.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-          <folding>
-            <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#232#233#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ClassWithDependencyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/AutoCloseable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-305">
           <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IoCContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="36" selection-start-column="36" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1288,10 +1193,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MyCloseableClassWithAnotherException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/IoCContextImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="123" column="19" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CloseableClassTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-229">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ClassWithDependencyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="95" column="57" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConstructorException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+          <folding>
+            <element signature="e#119#120#0" expanded="true" />
+            <element signature="e#156#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConstructorWithExceptionClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding>
+            <element signature="e#88#89#0" expanded="true" />
+            <element signature="e#171#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateOnTheFly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/IoCContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="84" selection-start-line="3" selection-start-column="84" selection-end-line="3" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/IoCContextImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        <state relative-caret-position="-814">
+          <caret line="75" column="21" lean-forward="true" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#370#371#0" expanded="true" />
@@ -1300,20 +1278,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MyCloseableClassWithAnotherException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/MyAbstractClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CloseableClassTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/MyBaseWithTwoDependency.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#232#233#0" expanded="true" />
+            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MyBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MyBeanBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MyBeanWithoutDefaultConstructor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#129#130#0" expanded="true" />
+            <element signature="e#161#162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="15">
+            <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

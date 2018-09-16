@@ -1,3 +1,4 @@
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.*;
@@ -7,12 +8,13 @@ public class IoCContextImpl implements IoCContext{
     private Stack<Class> classStack = new Stack<>();
     private boolean ifStartGetBean = false;
     private boolean isClosed = false;
+    private final Class<CreateOnTheFly> createOnTheFlyAnnotation = CreateOnTheFly.class;
 
     public boolean isClosed() {
         return isClosed;
     }
 
-    public <T> String[] getAllDependencyByClass(Class<T> currentClass) throws Exception {
+    public <T> String[] getAllDependencyByClass(Class<T> currentClass) {
         Field[] fields = getDependencyFields(currentClass);
         ArrayList<String> list = new ArrayList<>();
         for (Field field : fields) {
@@ -27,25 +29,46 @@ public class IoCContextImpl implements IoCContext{
         if (ifStartGetBean) {
             throw new IllegalStateException();
         }
+        ifClazzNullOrAbstract(beanClazz);
+        ifClazzHasDefaultConstructor(beanClazz);
+        ifHasConstructorException(beanClazz);
+
+        if (currentBeanMap.containsKey(beanClazz.getName())) {
+            return;
+        }
+        currentBeanMap.put(beanClazz.getName(), beanClazz);
+        classStack.push(beanClazz);
+    }
+
+    private void ifClazzNullOrAbstract(Class<?> beanClazz) {
         if (beanClazz == null) {
             throw new IllegalArgumentException("beanClazz is mandatory");
         }
         if (beanClazz.isInterface() || Modifier.isAbstract(beanClazz.getModifiers())) {
             throw new IllegalArgumentException(beanClazz.getName() + " is abstract.");
         }
+    }
+
+    private void ifClazzHasDefaultConstructor(Class<?> beanClazz) {
+        Constructor<?>[] constructors = beanClazz.getDeclaredConstructors();
+        boolean hasDefaultConstructor = false;
+        for (Constructor constructor: constructors) {
+            if (constructor.getParameterCount() == 0) {
+                hasDefaultConstructor = true;
+                break;
+            }
+        }
+        if (!hasDefaultConstructor) {
+            throw new IllegalArgumentException(beanClazz.getName() + " has no default constructor.");
+        }
+    }
+
+    private void ifHasConstructorException(Class<?> beanClazz) throws ConstructorException {
         try {
             beanClazz.newInstance();
         }catch (Exception e) {
             throw new ConstructorException(e.getMessage(), e.getCause());
         }
-        if (beanClazz.getDeclaredConstructors().length == 0) {
-            throw new IllegalArgumentException(beanClazz.getName() + " has no default constructor.");
-        }
-        if (currentBeanMap.containsKey(beanClazz.getName())) {
-            return;
-        }
-        currentBeanMap.put(beanClazz.getName(), beanClazz);
-        classStack.push(beanClazz);
     }
 
     @Override
@@ -55,23 +78,27 @@ public class IoCContextImpl implements IoCContext{
     }
 
     @Override
-    public <T> T getBean(Class<T> resolveClazz) throws Exception {
+    public <T> T getBean(Class<T> resolveClazz) {
         ifStartGetBean = true;
-        T instance;
+        T instance = null;
+        getBeanNullOrNotRegister(resolveClazz);
+
+        try {
+            Class<T> currentClass = currentBeanMap.get(resolveClazz.getName());
+            instance = initialDependency(currentClass, getDependencyFields(currentClass));
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return instance;
+    }
+
+    private <T> void getBeanNullOrNotRegister(Class<T> resolveClazz) {
         if (resolveClazz == null) {
             throw new IllegalArgumentException();
         }
         if (!currentBeanMap.containsKey(resolveClazz.getName())) {
             throw new IllegalStateException();
         }
-
-        try {
-            Class<T> currentClass = currentBeanMap.get(resolveClazz.getName());
-            instance = initialDependency(currentClass, getDependencyFields(currentClass));
-        }catch (Exception e) {
-            throw e;
-        }
-        return instance;
     }
 
     @Override
@@ -114,14 +141,14 @@ public class IoCContextImpl implements IoCContext{
         return instance;
     }
 
-    private <T> Field[] getDependencyFields(Class<T> currentClass) throws Exception {
+    private <T> Field[] getDependencyFields(Class<T> currentClass) {
         ArrayList<Field> allDependency = new ArrayList<>();
         ArrayList<Field> dependency = new ArrayList<>();
         while (!currentClass.equals(Object.class)) {
             Field[] declaredFields = currentClass.getDeclaredFields();
             for (Field field: declaredFields) {
                 field.setAccessible(true);
-                if (field.getAnnotation(CreateOnTheFly.class) != null) {
+                if (field.getAnnotation(createOnTheFlyAnnotation) != null) {
                     dependency.add(field);
                 }
             }

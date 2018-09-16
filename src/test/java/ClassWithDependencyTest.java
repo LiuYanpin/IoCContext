@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ClassWithDependencyTest {
     @Test
-    void should_create_class_with_dependency() throws Exception {
+    void should_create_class_with_dependency() throws Throwable {
         IoCContext context = new IoCContextImpl();
         context.registerBean(MyDependency.class);
         context.registerBean(MyBaseWithDependency.class);
@@ -13,7 +13,7 @@ class ClassWithDependencyTest {
     }
 
     @Test
-    void should_create_class_and_its_dependency() throws Exception {
+    void should_create_class_and_its_dependency() throws Throwable {
         IoCContext context = new IoCContextImpl();
         context.registerBean(MyBaseWithDependency.class);
         context.registerBean(MyDependency.class);
@@ -25,7 +25,7 @@ class ClassWithDependencyTest {
     }
 
     @Test
-    void should_throw_exception_if_not_register_dependency() throws ConstructorException {
+    void should_throw_exception_if_not_register_dependency() throws Throwable {
         IoCContext context = new IoCContextImpl();
         context.registerBean(MyBaseWithDependency.class);
         try {
@@ -36,7 +36,7 @@ class ClassWithDependencyTest {
     }
 
     @Test
-    void should_throw_exception_if_not_register_class_with_dependency() throws ConstructorException {
+    void should_throw_exception_if_not_register_class_with_dependency() throws Throwable {
         IoCContext context = new IoCContextImpl();
         context.registerBean(MyDependency.class);
         try {
@@ -47,7 +47,7 @@ class ClassWithDependencyTest {
     }
 
     @Test
-    void should_get_two_dependency_if_have_two_dependency() throws Exception {
+    void should_get_two_dependency_if_have_two_dependency() throws Throwable {
         IoCContext context = new IoCContextImpl();
         context.registerBean(MyBaseWithTwoDependency.class);
         context.registerBean(MyDependency.class);
@@ -60,7 +60,7 @@ class ClassWithDependencyTest {
     }
 
     @Test
-    void should_get_dependency_if_dependency_inherit_from_super() throws Exception {
+    void should_get_dependency_if_dependency_inherit_from_super() throws Throwable {
         IoCContext context = new IoCContextImpl();
         context.registerBean(MySuperClassWithDependency.class, MySubClassWithDependency.class);
         context.registerBean(MyDependency.class);
@@ -69,7 +69,7 @@ class ClassWithDependencyTest {
     }
 
     @Test
-    void should_get_ordered_dependency_if_have_dependency_inherit_form_super() throws Exception {
+    void should_get_ordered_dependency_if_have_dependency_inherit_form_super() throws Throwable {
         IoCContext context = new IoCContextImpl();
         context.registerBean(MySuperClassWithDependency.class, MySubClassWithDependency.class);
         context.registerBean(MyDependency.class);
@@ -82,7 +82,7 @@ class ClassWithDependencyTest {
     }
 
     @Test
-    void should_throw_exception_if_not_register() throws ConstructorException {
+    void should_throw_exception_if_not_register() throws Throwable {
         IoCContext context= new IoCContextImpl();
         context.registerBean(MySubClassWithDependency.class);
         try {
