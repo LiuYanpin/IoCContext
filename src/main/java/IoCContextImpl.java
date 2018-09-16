@@ -1,13 +1,16 @@
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.*;
 
-import static java.lang.Class.forName;
-
 public class IoCContextImpl implements IoCContext{
-    private Map<String, Class> currentBeanMap = new LinkedHashMap<>();
+    private Map<String, Class> currentBeanMap = new HashMap<>();
+    private Stack<Class> classStack = new Stack<>();
     private boolean ifStartGetBean = false;
+    private boolean isClosed = false;
+
+    public boolean isClosed() {
+        return isClosed;
+    }
 
     public <T> String[] getAllDependencyByClass(Class<T> currentClass) throws Exception {
         Field[] fields = getDependencyFields(currentClass);
@@ -42,7 +45,7 @@ public class IoCContextImpl implements IoCContext{
             return;
         }
         currentBeanMap.put(beanClazz.getName(), beanClazz);
-
+        classStack.push(beanClazz);
     }
 
     @Override
@@ -73,7 +76,33 @@ public class IoCContextImpl implements IoCContext{
 
     @Override
     public void close() throws Exception {
-        this.close();
+        ArrayList<Exception> allException = new ArrayList<>();
+        boolean throwFlag = false;
+        while (!classStack.empty()) {
+            Class<?> currentClass = classStack.pop();
+            if (currentClass.getSuperclass().equals(AutoCloseable.class)) {
+                Exception exception = handleCloseable(currentClass);
+                if (exception != null) {
+                    allException.add(exception);
+                    throwFlag = true;
+                }
+            }
+        }
+        isClosed = true;
+        if (throwFlag) {
+            throw allException.get(0);
+        }
+    }
+
+    private Exception handleCloseable(Class<?> closeable) {
+        if (closeable != null) {
+            try {
+                closeable.getClass().getMethod("close").invoke(closeable);
+            }catch (Exception exception) {
+                return exception;
+            }
+        }
+        return null;
     }
 
     private <T> T initialDependency(Class<T> currentClass, Field[] dependencyFields) throws Exception {
