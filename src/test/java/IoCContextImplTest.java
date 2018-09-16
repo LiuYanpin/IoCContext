@@ -55,12 +55,8 @@ class IoCContextImplTest {
     @Test
     void should_get_void_if_duplicate_bean() throws InstantiationException, IllegalAccessException {
         IoCContext context = new IoCContextImpl();
-        try {
-            context.registerBean(String.class);
-            context.registerBean(String.class);
-        }catch (Exception e) {
-            assertNull(e);
-        }
+        context.registerBean(String.class);
+        //context.registerBean(String.class);
     }
 
     @Test
@@ -152,7 +148,7 @@ class IoCContextImplTest {
     }
 
     @Test
-    void should_register_bean_by_interface_and_subclass_and_cover_previoius() throws Exception {
+    void should_register_bean_by_interface_and_subclass_and_cover_previous() throws Exception {
         IoCContext context = new IoCContextImpl();
         context.registerBean(MyBeanInterface.class, MyBeanInterfaceFancy.class);
         context.registerBean(MyBeanInterface.class, MyBeanInterfaceCooler.class);
@@ -169,5 +165,22 @@ class IoCContextImplTest {
         MyBeanInterface myBeanInterfaceInstance = context.getBean(MyBeanInterface.class);
         assertEquals(myBeanBaseInstance.getClass(), MyBeanExtendsBaseImplementsInterface.class);
         assertEquals(myBeanInterfaceInstance.getClass(), MyBeanExtendsBaseImplementsInterface.class);
+        assertNotSame(myBeanBaseInstance, myBeanInterfaceInstance);
+    }
+
+    @Test
+    void should_get_instance_by_subclass() throws Exception {
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(MyBeanBase.class, MyBeanBaseCooler.class);
+        MyBeanBaseCooler myBeanBaseCoolerInstance = (MyBeanBaseCooler) context.getBean(MyBeanBase.class);
+        assertEquals(myBeanBaseCoolerInstance.getClass(), MyBeanBaseCooler.class);
+    }
+
+    @Test
+    void should_get_instance_by_subclass_by_superclass() throws Exception {
+        IoCContext context = new IoCContextImpl();
+        context.registerBean(MyBeanBase.class, MyBeanBaseCooler.class);
+        MyBeanBaseCooler myBeanBaseCoolerInstance = context.getBean(MyBeanBaseCooler.class);
+        assertEquals(myBeanBaseCoolerInstance.getClass(), MyBeanBaseCooler.class);
     }
 }

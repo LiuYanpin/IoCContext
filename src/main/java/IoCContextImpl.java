@@ -1,10 +1,11 @@
-import com.sun.prism.es2.ES2Graphics;
-
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.util.HashMap;
-import java.util.HashSet;
+
+import static java.lang.Class.forName;
 
 public class IoCContextImpl implements IoCContext {
-    private HashSet<Class> currentBeanSet = new HashSet<>();
     private HashMap<String, Class> currentBeanMap = new HashMap<>();
     private boolean ifStartGetBean = false;
     @Override
@@ -18,15 +19,18 @@ public class IoCContextImpl implements IoCContext {
         if (beanClazz.isInterface()) {
             throw new IllegalArgumentException(beanClazz.getName() + " is abstract.");
         }
-
+        try {
+            beanClazz.newInstance();
+        }catch (Exception e) {
+            throw new IllegalArgumentException(beanClazz.getName() + "has no default constructor.");
+        }
         if (beanClazz.getDeclaredConstructors().length == 0) {
             throw new IllegalArgumentException(beanClazz.getName() + "has no default constructor.");
         }
-        if (currentBeanSet.contains(beanClazz)) {
+        if (currentBeanMap.containsKey(beanClazz.getName())) {
             return;
         }
-        currentBeanSet.add(beanClazz);
-        currentBeanMap.putIfAbsent(beanClazz.getName(), beanClazz);
+        currentBeanMap.put(beanClazz.getName(), beanClazz);
 
     }
 
@@ -40,13 +44,38 @@ public class IoCContextImpl implements IoCContext {
         if (!currentBeanMap.containsKey(resolveClazz.getName())) {
             throw new IllegalStateException();
         }
+
         try {
-            Class<T> theClass = currentBeanMap.get(resolveClazz.getName());
-            instance = theClass.newInstance();
+            Class<T> currentClass = currentBeanMap.get(resolveClazz.getName());
+            Constructor constructorWithParameter = getConstructorWithParameter(currentClass);
+            constructorWithParameter.setAccessible(true);
+            Object dependency = null;
+            Field[] fields = currentClass.getDeclaredFields();
+            for (Field field: fields) {
+                field.setAccessible(true);
+                if (field.getAnnotation(CreateOnTheFly.class) != null) {
+                    dependency = Class.forName(field.getGenericType().getTypeName()).newInstance();
+                }
+            }
+            instance = (T) constructorWithParameter.newInstance(dependency);
+
+
         }catch (Exception e) {
             throw e;
         }
         return instance;
+    }
+
+    private <T> Constructor getConstructorWithParameter(Class<T> currentClass) {
+        Constructor<?>[] constructors= currentClass.getDeclaredConstructors();
+        Constructor constructorWithParameter = null;
+        for (int constructorIndex = 0; constructorIndex < constructors.length; constructorIndex++) {
+            constructorWithParameter = constructors[constructorIndex];
+            if (constructorWithParameter.getParameterCount() != 0) {
+                break;
+            }
+        }
+        return constructorWithParameter;
     }
 
     @Override
@@ -55,7 +84,4 @@ public class IoCContextImpl implements IoCContext {
         currentBeanMap.put(resolveClazz.getName(), beanClazz);
     }
 
-    private <T> void removeBean(Class<T> toBeRemoveClass) {
-        currentBeanSet.remove(toBeRemoveClass);
-    }
 }
