@@ -49,21 +49,30 @@ public class IoCContextImpl implements IoCContext {
             Class<T> currentClass = currentBeanMap.get(resolveClazz.getName());
             Constructor constructorWithParameter = getConstructorWithParameter(currentClass);
             constructorWithParameter.setAccessible(true);
-            Object dependency = null;
-            Field[] fields = currentClass.getDeclaredFields();
-            for (Field field: fields) {
-                field.setAccessible(true);
-                if (field.getAnnotation(CreateOnTheFly.class) != null) {
-                    dependency = Class.forName(field.getGenericType().getTypeName()).newInstance();
-                }
+            int parameterCount = constructorWithParameter.getParameterCount();
+            if (parameterCount == 0) {
+                instance = currentClass.newInstance();
+            }else {
+                Object dependency = getDependencyInstance(currentClass);
+                instance = (T) constructorWithParameter.newInstance(dependency);
             }
-            instance = (T) constructorWithParameter.newInstance(dependency);
-
-
         }catch (Exception e) {
             throw e;
         }
         return instance;
+    }
+
+    private <T> Object getDependencyInstance(Class<T> currentClass) throws Exception {
+        Field[] fields = currentClass.getDeclaredFields();
+        Object dependency = null;
+        for (Field field: fields) {
+            field.setAccessible(true);
+            if (field.getAnnotation(CreateOnTheFly.class) != null) {
+                dependency = getBean(field.getType());
+                break;
+            }
+        }
+        return dependency;
     }
 
     private <T> Constructor getConstructorWithParameter(Class<T> currentClass) {

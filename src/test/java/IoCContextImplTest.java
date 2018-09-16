@@ -55,8 +55,14 @@ class IoCContextImplTest {
     @Test
     void should_get_void_if_duplicate_bean() throws InstantiationException, IllegalAccessException {
         IoCContext context = new IoCContextImpl();
+        IoCContext originContext = context;
         context.registerBean(String.class);
-        //context.registerBean(String.class);
+        IoCContext contextAfterRegisterOnce = context;
+        context.registerBean(String.class);
+        IoCContext contextAfterRegisterTwice = context;
+        assertEquals(originContext, contextAfterRegisterOnce);
+        assertEquals(originContext, contextAfterRegisterTwice);
+        assertEquals(contextAfterRegisterOnce, contextAfterRegisterTwice);
     }
 
     @Test
